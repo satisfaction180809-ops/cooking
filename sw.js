@@ -1,4 +1,4 @@
-const CACHE = 'lozhka-v1';
+const CACHE = 'lozhka-v2';
 
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -7,8 +7,22 @@ self.addEventListener('install', event => {
         './',
         './index.html',
         './manifest.json',
-        './assets/icon.svg'
+        './assets/icon.svg',
+        './assets/icon-192.png',
+        './assets/icon-512.png'
       ])
+    )
+  );
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(
+        keys
+          .filter(key => key !== CACHE)
+          .map(key => caches.delete(key))
+      )
     )
   );
 });

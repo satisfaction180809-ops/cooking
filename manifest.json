@@ -3,14 +3,21 @@
   "short_name": "Ложка",
   "description": "100 простых рецептов с шагами и таймером",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#f7f5ef",
   "theme_color": "#f7f5ef",
   "icons": [
     {
-      "src": "assets/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]
